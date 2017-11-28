@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  
+<div id="scott" class="container" onmousedown="SwitchToFullScreen()">
+  <h1>My First Bootstrap Page</h1>
+  <p>This part is inside a .container class.</p> 
+  <p>The .container class provides a responsive fixed width container.</p>           
+</div>
+
+
+<div class="container" onmousedown="ShowResolution()">
+    <h3>Fuck!!</h3>
+</div>
+
+  <div class="row">
+    <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+    <div class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
+    <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+  </div>
+
+    <script>
+        var globlaIsFullScree;
+
+        function ShowResolution()
+        {
+            alert("Fuck!!");
+            var devicePixelRatio = window.devicePixelRatio;
+            alert("window.devicePixelRatio: " + window.devicePixelRatio);
+            alert("window.screen.width:" + window.screen.width.toString() + "/" + "window.screen.height: " + window.screen.height.toString());
+            alert("window.innerWidth:" + window.innerWidth.toString() + "/" + "window.innerHeight: " + window.innerHeight.toString());
+            alert("document.documentElement.clientWidth: " + document.documentElement.clientWidth.toString() + "\n" +
+                  "document.documentElement.clientHeight: " + document.documentElement.clientHeight.toString());
+
+            var myTitle = document.getElementById("scott");
+            myTitle.style.width = (window.screen.width * devicePixelRatio).toString() + "px";
+            myTitle.style.height = (window.screen.height * devicePixelRatio).toString() + "px";
+        }
+
+        function SwitchToFullScreen()
+        {
+            //alert("Fuck!!");
+
+      //      if (!document.fullscreenElement &&    // alternative standard method
+      //!document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {  // current working methods
+      //          if (document.documentElement.requestFullscreen) {
+      //              document.documentElement.requestFullscreen();
+      //          } else if (document.documentElement.msRequestFullscreen) {
+      //              document.documentElement.msRequestFullscreen();
+      //          } else if (document.documentElement.mozRequestFullScreen) {
+      //              document.documentElement.mozRequestFullScreen();
+      //          } else if (document.documentElement.webkitRequestFullscreen) {
+      //              document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+      //          }
+      //      } else {
+      //          if (document.exitFullscreen) {
+      //              document.exitFullscreen();
+      //          } else if (document.msExitFullscreen) {
+      //              document.msExitFullscreen();
+      //          } else if (document.mozCancelFullScreen) {
+      //              document.mozCancelFullScreen();
+      //          } else if (document.webkitExitFullscreen) {
+      //              document.webkitExitFullscreen();
+      //          }
+      //      }
+
+
+
+
+
+            var scott = document.getElementById("scott");
+
+            var isFullScreen = document.fullscreenEnabled;
+            alert("isFullScreen: " + isFullScreen);
+            //if (isFullScreen == false)
+            //{
+                
+
+                if (!document.fullscreenElement &&    // alternative standard method
+                    !document.mozFullScreenElement &&
+                    !document.webkitFullscreenElement &&
+                    !document.msFullscreenElement) {  // current working methods
+
+                    if (scott.requestFullscreen) {
+                        scott.requestFullscreen();
+                    }
+                    else if (scott.msRequestFullscreen) {
+                        scott.msRequestFullscreen();
+                    }
+                    else if (scott.mozRequestFullScreen) {
+                        scott.mozRequestFullScreen();
+                    }
+                    else if (scott.webkitRequestFullscreen) {
+                        scott.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+                    }
+                }
+                //else
+                //{
+                //    if (document.exitFullscreen)
+                //    {
+                //        document.exitFullscreen();
+                //    }
+                //    else if (document.msExitFullscreen)
+                //    {
+                //        document.msExitFullscreen();
+                //    }
+                //    else if (document.mozCancelFullScreen)
+                //    {
+                //        document.mozCancelFullScreen();
+                //    }
+                //    else if (document.webkitExitFullscreen)
+                //    {
+                //        document.webkitExitFullscreen();
+                //    }
+                //}
+            //}
+
+
+
+
+
+        }
+    </script> 
+</body>
+</html>
