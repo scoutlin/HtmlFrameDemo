@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ClientCookie</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body onload= "LoadUrl()">
+    <h1>ClientCookie</h1>
+
+    <div>
+        <a href="http://127.0.0.1:8080/iFrame/iFrame.html">Visit iFrame</a>
+    </div>
+
+    <script>
+        var gUrl;
+
+        function LoadUrl() {
+            gUrl = document.URL;
+            alert("gUrl: " + gUrl); //OK
+            //document.cookie = "token=fuck;uid=suck;domain=127.0.0.1;path=/"; //O
+            //document.cookie = "token=fuck;uid=suck"; //X
+            //document.cookie = "token=fuck;uid=suck;domain=127.0.0.1"; //X
+            document.cookie = "token=fjskl-y6879-fkdjkls-fdsfsf;path=/"; //O
+            document.cookie = "uid=781;path=/";//O
+            alert(document.cookie.length);
+            alert(document.cookie);
+
+            //// similar behavior as an HTTP redirect
+            //window.location.replace("http://127.0.0.1:8080/iFrame/iFrame.html");
+            //// similar behavior as clicking on a link
+            //window.location.href = "http://127.0.0.1:8080/iFrame/iFrame.html";     
+        }
+    </script>
+</body>
+</html>

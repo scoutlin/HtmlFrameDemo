@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>iFrame</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body onload= "LoadCookie()">
+    <!--
+    <div >
+        <a href="http://127.0.0.1:8080/ClientCookie/ClientCookie.html">Visit ClientCookie</a>
+    </div>
+    -->
+    <iframe src="http://127.0.0.1:8080/WebGL?token=fuck&uid=978" style="width:100vw; height:100vh">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+    <script>
+            var gUrl;
+
+            function LoadCookie() {
+                alert(document.cookie);
+                //document.cookie = "token=;path=/";
+                //document.cookie = "uid=;path=/";
+                alert(document.cookie);
+            }
+    </script>
+</body>
+</html>
